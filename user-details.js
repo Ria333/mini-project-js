@@ -11,7 +11,7 @@ divBig.appendChild(postUser);
 postUser.onclick = function (){
 
     fetch (`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
-        .then (function (value){ return value.json();})
+        .then ((value) => value.json())
         .then (function (posts){
 
             let PostsBox = document.getElementsByClassName('PostsBox')[0]
@@ -25,7 +25,7 @@ postUser.onclick = function (){
 
                 let getDetailsAboutPost = document.createElement ('a');
                 getDetailsAboutPost.innerText = 'Get Details About Post';
-                getDetailsAboutPost.href = `user.id=${JSON.stringify(post)}`
+                getDetailsAboutPost.href = `post-details.html?postId=${post.id}`
 
                 PostsBox.appendChild(Posts);
                 postDetal.appendChild(getDetailsAboutPost);

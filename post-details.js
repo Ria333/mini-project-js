@@ -1,5 +1,15 @@
-let JSONPost = new URL(location)
-console.log(location);
+let JSONPost = (new URL(location)).searchParams
+const id = JSONPost.get('postId');
+
+fetch (`https://jsonplaceholder.typicode.com/posts/${id}`)
+    .then ((value) => value.json())
+    .then (post => {
+      console.log(post)
+    })
+
+
+
+
 //     .searchParams.get('post');
 //
 // let post = JSON.parse(JSONPost);
