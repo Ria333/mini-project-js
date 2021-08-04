@@ -29,21 +29,28 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
 
         let divForMassive1 = document.getElementsByClassName('massive1')[0];
         for (const user of users) {
-            let div = document.createElement('div');
-            div.innerText = `${user.id} ${user.name}`;
-
-            let detal = document.createElement ('button');
+            let diva = document.createElement('div');
+            diva.className = 'forty'
+            diva.innerText = `id:${user.id} name:${user.name}`;
+            let detal = document.createElement('button');
+            detal.className = 'button_get_details_about_user'
             detal.innerText = '';
 
 
-            let getDetails = document.createElement ('a');
+            let getDetails = document.createElement('a');
             getDetails.innerText = 'Get Details';
             getDetails.href = `user-details.html?user=${JSON.stringify(user)}`
-
+            getDetails.className = 'boxGetDetails'
+            let divForButton = document.createElement('div')
+            divForButton.className = 'divForButton'
             detal.appendChild(getDetails);
-            div.appendChild(detal);
-            divForMassive1.appendChild(div);
-        }})
+            divForButton.appendChild(detal);
+
+            divForMassive1.appendChild(diva);
+            divForMassive1.appendChild(divForButton);
+        }
+    })
+
 
 
 
